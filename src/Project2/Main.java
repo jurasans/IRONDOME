@@ -1,10 +1,16 @@
 package Project2;
 
-import java.awt.*;
+import java.awt.DisplayMode;
+import java.awt.Graphics2D;
+import java.awt.GraphicsConfiguration;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
+import java.awt.Window;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 
 import javax.swing.JFrame;
+
 
 public class Main {
 	

@@ -62,7 +62,7 @@ class IronDome {
 			g2d.setColor(Color.GREEN);
 			g2d.fill(right);
 			
-		    setAngleL(-(Math.atan2(getGroundPointL().y-aim.y ,aim.x-getGroundPointL().x)* 180 / Math.PI)/75);
+		    setAngleL(-(Math.atan2(getGroundPointLeft().y-aim.y ,aim.x-getGroundPointLeft().x)* 180 / Math.PI)/75);
 			
 			AffineTransform transform = new AffineTransform();
 			transform.rotate(getAngleL(),left.getMinX(), left.getMaxY());
@@ -97,7 +97,7 @@ class IronDome {
 		}
 		
 		// weapon handling system
-		if (isFiredL()){							//if weapon has been fired start timer
+		if (isFiredLeft()){							//if weapon has been fired start timer
 			setT1l(System.currentTimeMillis());
 			setFiredL(false);
 		}
@@ -108,7 +108,7 @@ class IronDome {
 		if (isReloadingL()){
 			setT2l(System.currentTimeMillis());
 			setReloadingL(false);
-			setAmmoL(getMagazine());
+			setAmmoLeft(getMagazine());
 		}
 		if (isReloadingR()){
 			setT2r(System.currentTimeMillis());
@@ -120,8 +120,8 @@ class IronDome {
 	
 	boolean fireEnabled(){
 		if (getControlledGroundPoint()!=null){
-		if (getControlledGroundPoint().equals(getGroundPointL())){
-			if ((!isFiredL()) && (System.currentTimeMillis()-getT1l()>getReload()) && (!isReloadingL()) && (System.currentTimeMillis()-getT2l()>getLongReload()) )
+		if (getControlledGroundPoint().equals(getGroundPointLeft())){
+			if ((!isFiredLeft()) && (System.currentTimeMillis()-getT1l()>getReload()) && (!isReloadingL()) && (System.currentTimeMillis()-getT2l()>getLongReload()) )
 				return true;
 		}
 		
@@ -171,7 +171,7 @@ class IronDome {
 
 	
 
-	Point getGroundPointL() {
+	Point getGroundPointLeft() {
 		return groundPointL;
 	}
 
@@ -227,11 +227,11 @@ class IronDome {
 		this.ammoR = ammoR;
 	}
 
-	int getAmmoL() {
+	int getAmmoLeft() {
 		return ammoL;
 	}
 
-	void setAmmoL(int ammoL) {
+	void setAmmoLeft(int ammoL) {
 		this.ammoL = ammoL;
 	}
 
@@ -243,7 +243,7 @@ class IronDome {
 		this.firedR = firedR;
 	}
 
-	boolean isFiredL() {
+	boolean isFiredLeft() {
 		return firedL;
 	}
 
